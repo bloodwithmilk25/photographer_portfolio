@@ -1,15 +1,14 @@
-FROM python:3.7
-MAINTAINER Nikita
+FROM python:3.7-slim
 
-ENV PYTHONBUFFERED 1
+# uWSGI will listen on this port
+EXPOSE 8000
 
-COPY ./requirements.txt /requirements.txt
-RUN apt-get build-dep python-imaging && apt-get install libjpeg62 libjpeg62-dev && pip install PIL
-RUN pip install -r requirements.txt
+# Add any static environment variables needed by Django or your settings file here:
+ENV DJANGO_SETTINGS_MODULE=Portfolio.settings
+ENV SECRET_KEY=E1OmLFzqIIgq82HGYJLXL0S6IWWRwOLhY6
+ENV DEBUG_VALUE=FALSE
+ENV EMAIL_HOST=smtp.gmail.com
+ENV EMAIL_HOST_USER=emailconfiramation@gmail.com
+ENV EMAIL_HOST_PASSWORD=ReVeTaSt0gNe2#
+ENV EMAIL_PORT=587
 
-RUN mkdir /app
-WORKDIR /app
-COPY . /app
-
-RUN adduser -D user
-USER user
