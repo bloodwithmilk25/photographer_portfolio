@@ -3,6 +3,8 @@ services:
   web:
     build: .
     restart: on-failure
+    env_file:
+      - ./.env
     command: >
       sh -c "python manage.py makemigrations &&
       python manage.py migrate &&
