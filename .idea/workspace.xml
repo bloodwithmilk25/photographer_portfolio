@@ -70,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+              <caret line="14" column="138" selection-start-line="14" selection-start-column="138" selection-end-line="14" selection-end-column="138" />
             </state>
           </provider>
         </entry>
@@ -274,18 +274,18 @@
       <workItem from="1556797156724" duration="9379000" />
       <workItem from="1556903551867" duration="67000" />
       <workItem from="1556913484871" duration="5424000" />
-      <workItem from="1556923519334" duration="1347000" />
+      <workItem from="1556923519334" duration="2269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27415000" />
+    <option name="totallyTimeSpent" value="28337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23194748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23194748" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -297,7 +297,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32912534" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3096847" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3096847" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
@@ -495,7 +495,7 @@
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <caret line="14" column="138" selection-start-line="14" selection-start-column="138" selection-end-line="14" selection-end-column="138" />
         </state>
       </provider>
     </entry>
