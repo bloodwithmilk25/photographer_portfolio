@@ -3,6 +3,8 @@ services:
   web:
     build: .
     restart: on-failure
+    volumes:
+      - .:/www
     env_file:
       - ./.env
     command: >
