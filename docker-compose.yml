@@ -4,6 +4,7 @@ services:
     build: .
     restart: on-failure
     volumes:
+      - /var/log/gunicorn:/var/log
       - .:/www
     env_file:
       - ./.env
@@ -20,7 +21,7 @@ services:
     image: "nginx"
     restart: always
     volumes:
-      - /etc/nginx/portfolio/log:/var/log/nginx
+      - /var/log/nginx:/var/log/nginx
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./static:/static
       - ./media:/media
