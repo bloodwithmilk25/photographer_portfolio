@@ -20,6 +20,7 @@ services:
     image: "nginx"
     restart: always
     volumes:
+      - /etc/nginx/portfolio/log:/var/log/nginx
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./static:/static
       - ./media:/media
