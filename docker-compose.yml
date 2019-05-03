@@ -12,7 +12,7 @@ services:
       sh -c "python manage.py makemigrations &&
       python manage.py migrate &&
       python manage.py collectstatic --noinput &&
-      gunicorn --bind 0.0.0.0:8080 portfolio.wsgi"
+      gunicorn --bind 0.0.0.0:8080 portfolio.wsgi --access-logfile '-'"
     ports:
       - "8000:8080"
     depends_on:
