@@ -12,18 +12,18 @@ services:
       sh -c "python manage.py makemigrations &&
       python manage.py migrate &&
       python manage.py collectstatic --noinput &&
-      gunicorn --bind 0.0.0.0:8080 portfolio.wsgi --access-logfile '/var/log/gunicorn/access.log' --error-logfile '/var/log/gunicorn/error.log'"
+      gunicorn --bind 0.0.0.0:8080 portfolio.wsgi:application --access-logfile '/var/log/gunicorn/access.log' --error-logfile '/var/log/gunicorn/error.log'"
     ports:
       - "8000:8080"
-    depends_on:
-      - nginx
   nginx:
     image: "nginx"
     restart: always
     volumes:
-      - /var/log/nginx:/var/log/nginx
+#      - /var/log/nginx:/var/log/nginx
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./static:/static
       - ./media:/media
     ports:
       - "80:80"
+    depends_on:
+      - web
