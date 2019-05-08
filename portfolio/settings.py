@@ -21,11 +21,11 @@ TEMPLATES_BLOG = os.path.join(BASE_DIR, 'blog/templates/blog')
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = bool(int(os.getenv('DEBUG', False)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
+SECRET_KEY = "fsefpejkq9034u3j-tkln;re g"#os.getenv('SECRET_KEY')
 
 ALLOWED_HOSTS = ["*"]
 
@@ -123,10 +123,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-# Media
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+# Media files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 # email
 EMAIL_USE_TLS = True

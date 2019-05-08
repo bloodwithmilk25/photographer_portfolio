@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.6-alpine
 
 RUN apk --update add \
     build-base \
@@ -13,10 +13,7 @@ RUN mkdir /www
 WORKDIR /www
 COPY requirements.txt /www/
 RUN pip install -r requirements.txt
-EXPOSE 8000
-EXPOSE 80
 
 ENV PYTHONUNBUFFERED 1
 
 COPY . /www/
-
