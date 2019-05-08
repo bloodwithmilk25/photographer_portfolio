@@ -5,11 +5,12 @@ services:
     restart: always
     volumes:
       - .:/www
+      - /var/log/gunicorn/portfolio/:/var/log/gunicorn/portfolio/
     env_file:
       - ./.env
     command: >
       sh -c "python manage.py collectstatic --noinput &&
-      gunicorn --bind 0.0.0.0:8000 portfolio.wsgi:application --access-logfile '/var/log/portfolio/gunicorn/access.log' --error-logfile '/var/log/portfolio/gunicorn/error.log'"
+      gunicorn --bind 0.0.0.0:8000 portfolio.wsgi:application --access-logfile '/var/log/gunicorn/portfolio/access.log' --error-logfile '/var/log/gunicorn/portfolio/error.log'"
   nginx:
     image: "nginx"
     restart: always
@@ -17,6 +18,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./static:/var/www/portfolio/static
       - ./media:/var/www/portfolio/media
+      - /var/log/nginx/portfolio/:/var/log/nginx/portfolio/
     links:
       - web
     expose:
