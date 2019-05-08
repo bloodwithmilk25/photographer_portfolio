@@ -10,10 +10,6 @@ services:
     command: >
       sh -c "python manage.py collectstatic --noinput &&
       gunicorn --bind 0.0.0.0:8000 portfolio.wsgi:application --access-logfile '-'"
-    expose:
-      - 8000
-    ports:
-      - "8000:8000"
   nginx:
     image: "nginx"
     restart: always
